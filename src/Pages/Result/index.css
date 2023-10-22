@@ -1,15 +1,21 @@
-.container-result {
-  background-color: #44c444;
+.container {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-image: url("https://static.vecteezy.com/system/resources/previews/004/927/052/original/set-cute-police-chibi-character-vector.jpg");
+  background-size: contain;
+}
+
+.container-result {
+  margin: 0 200px;
 }
 .child-result {
+  /* overflow: scroll; */
   background-color: green;
-  width: 20%;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -21,14 +27,43 @@
   padding: 20px;
 }
 .custom-text {
-  color: white;
+  color: rgb(8, 0, 0);
   font-size: 18px;
+  font-weight: 500;
+}
+
+.custom-ans-correct {
+  color: rgb(235, 227, 227);
+  font-size: 18px;
+  font-weight: 500;
+  background-color: rgba(14, 243, 68, 0.621);
+
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.custom-ans-incorrect {
+  color: rgb(244, 240, 240);
+  font-size: 18px;
+  font-weight: 500;
+  background-color: rgba(243, 14, 14, 0.621);
+  border-radius: 10px;
+  padding: 10px;
 }
 .title {
   color: white;
+  text-shadow: 2px 2px rgb(14, 14, 13);
   font-size: 24px;
-  margin-bottom: 60px;
+  font-weight: 600;
+  text-align: center; /* Căn giữa theo chiều ngang */
+  display: flex; /* Căn giữa theo chiều dọc */
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px 20px 5px;
+  background: #bada55;
+  margin: 10px auto;
 }
+
 .button-home {
   position: absolute;
   top: 0;
@@ -43,61 +78,6 @@
 }
 .icon-home {
   color: white;
-}
-
-.lds-heart {
-  display: inline-block;
-  position: relative;
-  width: 80px;
-  height: 80px;
-  transform: rotate(45deg);
-  transform-origin: 40px 40px;
-}
-.lds-heart div {
-  top: 32px;
-  left: 32px;
-  position: absolute;
-  width: 32px;
-  height: 32px;
-  background: #fcf;
-  animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-.lds-heart div:after,
-.lds-heart div:before {
-  content: " ";
-  position: absolute;
-  display: block;
-  width: 32px;
-  height: 32px;
-  background: pink;
-}
-.lds-heart div:before {
-  left: -24px;
-  border-radius: 50% 0 0 50%;
-}
-.lds-heart div:after {
-  top: -24px;
-  border-radius: 50% 50% 0 0;
-}
-@keyframes lds-heart {
-  0% {
-    transform: scale(0.95);
-  }
-  5% {
-    transform: scale(1.1);
-  }
-  39% {
-    transform: scale(0.85);
-  }
-  45% {
-    transform: scale(1);
-  }
-  60% {
-    transform: scale(0.95);
-  }
-  100% {
-    transform: scale(0.9);
-  }
 }
 
 .lds-ring {
@@ -134,4 +114,36 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+/* ----------------- */
+
+.container-question1 {
+  background-color: #44c444;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.child-question1 {
+  border-style: solid;
+  background-color: pink;
+  opacity: 0.95;
+  border-width: 5px;
+  border-color: yellow;
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 20px;
+}
+.question1 {
+  margin-bottom: 10px;
+  color: rgb(6, 6, 6);
+  font-size: 20px;
+  font-weight: 500;
+}
+.list-answer {
+  color: #141203;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: left;
 }
