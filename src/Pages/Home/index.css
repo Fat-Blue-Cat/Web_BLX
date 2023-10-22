@@ -1,0 +1,46 @@
+.parent {
+  background-color: #44c444;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/public/104777-OMICH7-352.jpg");
+  background-size: 50% 100%;
+}
+.button {
+  background-color: grey;
+  height: 80px;
+  width: 180px;
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 30px;
+}
+.button:hover {
+  background-color: orange !important;
+}
+.rule {
+  background-color: pink;
+  opacity: 0.95;
+  width: 44%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-style: solid;
+  border-width: 5px;
+  border-color: orange;
+  border-radius: 20px;
+  padding: 20px;
+  color: white;
+}
+.rule-title {
+  font-size: 24px;
+  margin-right: 20px;
+}
+.rule-element {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
