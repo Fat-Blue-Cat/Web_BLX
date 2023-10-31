@@ -3,6 +3,8 @@ import "./index.css";
 import { useSelector } from "react-redux";
 import { CaretLeftOutlined } from "@ant-design/icons";
 import { useEffect, useState } from "react";
+import { Radio, Space } from "antd";
+import { LIST_IMG } from "../../constants/List";
 
 export default function Result() {
   // const score = useSelector((state) => state.scoreReducer.score);
@@ -30,27 +32,79 @@ export default function Result() {
   }
   const navigate = useNavigate();
   return (
-    <div className="container-result">
-      <div className="title">
-        <h2>Congratulation! Here is your result </h2>
+    <div className="container">
+      <div className="container-result">
+        <div className="title">
+          <h2>Congratulation! Here is your result </h2>
+        </div>
+        <div className="">
+          {result ? (
+            <div className="custom-text ">
+              <div className="child-question1">
+                <p>Total scores : {result.testResults.score} </p>
+                <p>
+                  The number of true sentences:{" "}
+                  {result.testResults.numberOfCorrect}{" "}
+                </p>
+                <p>
+                  The number of false sentences:{" "}
+                  {result.testResults.numberOfIncorrect}{" "}
+                </p>
+                <p>
+                  Result: {result.testResults.isPass === true ? "Đạt" : "Tạch"}{" "}
+                </p>
+              </div>
+              <div>
+                <div>
+                  {result.reviewTestList.map((ans, index) => (
+                    <div key={index} className="child-question1">
+                      <span className="question1 ">
+                        Question {index + 1} : {ans.questionText}
+                      </span>
+                      <div>
+                        <img src={LIST_IMG[index].img} />
+                      </div>
+                      <Radio.Group
+                        defaultValue={ans.answerText}
+                        value={ans.answerText}
+                      >
+                        <Space direction="vertical">
+                          {ans.answerChoices.map((choice, index) => (
+                            <Radio
+                              key={index}
+                              value={choice.answerText}
+                              className="list-answer"
+                            >
+                              {choice.answerText}
+                            </Radio>
+                          ))}
+                        </Space>
+                      </Radio.Group>
+                      {ans.isCorrect ? (
+                        <div className="custom-ans-correct">
+                          Bạn trả lời đúng
+                        </div>
+                      ) : (
+                        <div className="custom-ans-incorrect">
+                          Bạn trả lời sai! Đáp án đúng là: {ans.correctAnswer}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="lds-ring">
+              <div></div>
+            </div>
+          )}
+        </div>
+        <button onClick={() => navigate("/")} className="button-home">
+          {/* eslint-disable-next-line react/jsx-no-undef */}
+          <CaretLeftOutlined className="icon-home" />
+        </button>
       </div>
-      <div className="child-result">
-        {result ? (
-          <div className="custom-text">
-            <p>Total scores : {result.score} </p>
-            <p>The number of true sentences: {result.numberOfCorrect} </p>
-            <p>The number of false sentences: {result.numberOfIncorrect} </p>
-          </div>
-        ) : (
-          <div className="lds-ring">
-            <div></div>
-          </div>
-        )}
-      </div>
-      <button onClick={() => navigate("/")} className="button-home">
-        {/* eslint-disable-next-line react/jsx-no-undef */}
-        <CaretLeftOutlined className="icon-home" />
-      </button>
     </div>
   );
 }
