@@ -80,9 +80,17 @@ export default function Result() {
                           ))}
                         </Space>
                       </Radio.Group>
-                      {ans.isCorrect ? (
+                      {
+                        ans.answerText != null ? (
+                          <div className="user-answer">
+                            Đáp án của bạn là: {ans.answerText}
+                          </div>
+                        ) : null
+                      }
+                      
+                        {ans.isCorrect ? (
                         <div className="custom-ans-correct">
-                          Bạn trả lời đúng
+                          Bạn đã trả lời đúng
                         </div>
                       ) : (
                         <div className="custom-ans-incorrect">
@@ -101,6 +109,7 @@ export default function Result() {
           )}
         </div>
         <button onClick={() => navigate("/")} className="button-home">
+          Thoát
           {/* eslint-disable-next-line react/jsx-no-undef */}
           <CaretLeftOutlined className="icon-home" />
         </button>

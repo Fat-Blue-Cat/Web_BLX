@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-const-assign */
 import { Button, Radio, Space } from "antd";
 import React, { useEffect, useState } from "react";
@@ -5,8 +6,7 @@ import "./index.css";
 import Countdown from "../../components/Time";
 import { LIST_IMG } from "../../constants/List";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { addScore, correct, incorrect } from "../../redux/Score/action";
+import { useSelector } from "react-redux";
 
 export default function Questions() {
   const [data, setData] = useState(null);
@@ -104,13 +104,13 @@ export default function Questions() {
               {cut + 1} of {data.length} questions
             </h1>
             <div className="fixed-css-top-right">
-              <Countdown seconds={300} />
+              <Countdown seconds={1140} />
             </div>
           </div>
           <span className="question">
             Question {cut + 1} : {data[cut].question.questionText}
           </span>
-          <img className="img-style" src={LIST_IMG[cut].img} />
+          <img alt = "anh-bien-bao" className="img-style" src={LIST_IMG[cut].img} />
           <Radio.Group
             onChange={onChange}
             value={values[cut]?.answerChoicesText || undefined}

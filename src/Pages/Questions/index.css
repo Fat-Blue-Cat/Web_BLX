@@ -24,15 +24,17 @@
   padding: 30px;
 }
 .question {
+  margin-top: 10px;
   margin-bottom: 10px;
   color: rgb(6, 6, 6);
   font-size: 20px;
   font-weight: 500;
+  text-align: left;
 }
 .list-answer {
   color: #141203;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 470;
   text-align: left;
 }
 .footer {
@@ -42,7 +44,7 @@
   margin-top: 90px;
 }
 .custom-button-1 {
-  background-color: grey;
+  background-color: rgb(94, 92, 92);
   font-weight: 600;
   height: 40px;
 }
@@ -67,6 +69,7 @@
 .img-style {
   /* width: 260px;
   height: 96px; */
+  margin-top: 10px;
 }
 
 .fixed-css-next {

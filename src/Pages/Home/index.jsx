@@ -13,22 +13,22 @@ function Home() {
   return (
     <div className="parent">
       <div className="rule">
-        <h3 className="rule-title">Some rule of this Quiz</h3>
+        <h3 className="rule-title">Một vài luật của bài kiểm tra</h3>
         <ol>
           <li className="rule-element">
-            You will have only 30 seconds for total Quiz
+            Số câu hỏi 25 câu / 1 đề.
           </li>
           <li className="rule-element">
-            Once you select your answer, it can be undone
+            Thời gian làm bài 19 phút.
           </li>
           <li className="rule-element">
-            You can't select any option one time goes off
+            Điểm đạt: 21 câu đúng / 25 câu.
           </li>
           <li className="rule-element">
-            You can't exit from the Quiz while you are playing
+            Mỗi câu đúng tương ứng với 1 điểm.
           </li>
           <li className="rule-element">
-            You will get points on the basis of your correct answers
+            Bạn chỉ được xem lại bài 1 lần.
           </li>
         </ol>
       </div>
