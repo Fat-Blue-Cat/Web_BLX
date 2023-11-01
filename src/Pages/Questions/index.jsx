@@ -31,23 +31,8 @@ export default function Questions() {
   if (data) {
   }
 
-  const [values, setValues] = useState([]);
+  const [values, setValues] = useState(Array.from({ length: 25 }, () => ({})));
   const [cut, setCut] = useState(0);
-
-  useEffect(() => {
-    // Chạy hàm sau khi fetch dữ liệu và có giá trị trong data
-    if (data) {
-      const newValues = data.map((dt, index) => ({
-        questionId: dt.question.questionId,
-        questionText: dt.question.questionText,
-        testNumber: dt.question.testNumber,
-        answerId: "",
-        isCorrect: "",
-        answerChoicesText: "",
-      }));
-      setValues(newValues);
-    }
-  }, [data]);
 
   // const dispatch = useDispatch();
   const onChange = (e) => {
